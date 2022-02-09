@@ -15,10 +15,15 @@ function Coin(){
     // name: the unit for the currency
     // amount: value of a field in the submitForm...
 
-     // Fetch the data from the db.json of the other repo
+     // Fetch the data from db.json
 
-    function deleteCoin(){ // Function to delete the coin Object
-        // DELETE fetch request
+    function deleteCoin(){ // Function to delete a coin Object
+        /* fetch(`<url>${coin.id}`, { // 
+      method: "DELETE",
+    })
+    .then((r) => r.json())
+    .then(() => onDeleteQuestion(coin)); //
+    */
     }
 
     return(
