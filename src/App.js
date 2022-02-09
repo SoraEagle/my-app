@@ -2,10 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useEffect, useState} from "react";
 import {Route, Switch} from "react-router-dom";
-import NavBar from './NavBar.js';
-import Home from './Home.js';
-import Coins from './Coins.js';
-import NewCoin from './NewCoin.js';
+import NavBar from './NavBar';
+import Home from './Home';
+import Coins from './Coins';
+import NewCoin from './NewCoin';
 import {CoinListProvider} from "./context/coinList";
 import {CoinInvProvider} from "./context/coinInv";
 
@@ -13,17 +13,7 @@ import {CoinInvProvider} from "./context/coinInv";
 
 function App(){
   const [coinInv, setCoinInv] = useState([]); //State variables for the Array of current inventory of coins.
-  const [coinList, setCoinList] = useState([]); // State variables for setting the API's list of coins.
   // const {coinList, setCoinList} = useContext(CoinListContext); // State variables for the API's list of coins.
-
-  // This useEffect is in App to only test if it works!
-  useEffect(() => {
-    fetch("https://api.coinbase.com/v2/currencies") //default GET request to the API
-    .then((r) => r.json())
-    .then((data) => setCoinList(data));
-  }, []);
-
-  console.log("coinList is:", coinList); // Find a way to fetch ONLY the name and id of each object in data...
 
   return(
     <div className="App">

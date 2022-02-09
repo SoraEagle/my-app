@@ -1,5 +1,3 @@
-// Any state needed?
-
 function Home(){
     // 
     return(

@@ -1,4 +1,4 @@
-// Any state needed?
+// Any state needed? ?
 
 function Coin(){
     // const {id, name, amount} = coin; //Should a key be added?
