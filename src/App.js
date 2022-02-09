@@ -1,22 +1,59 @@
 import logo from './logo.svg';
 import './App.css';
+import React, {useEffect, useState} from "react";
+import {Route, Switch} from "react-router-dom";
+import NavBar from './NavBar.js';
+import Home from './Home.js';
+import Coins from './Coins.js';
+import NewCoin from './NewCoin.js';
+import {CoinListProvider} from "./context/coinList";
+import {CoinInvProvider} from "./context/coinInv";
 
-function App() {
-  return (
+// Any state needed? Yes, so state can be passed to each child component needing it (useContext!!!)
+
+function App(){
+  const [coinInv, setCoinInv] = useState([]); //State variables for the Array of current inventory of coins.
+  const [coinList, setCoinList] = useState([]); // State variables for setting the API's list of coins.
+  // const {coinList, setCoinList} = useContext(CoinListContext); // State variables for the API's list of coins.
+
+  // This useEffect is in App to only test if it works!
+  useEffect(() => {
+    fetch("https://api.coinbase.com/v2/currencies") //default GET request to the API
+    .then((r) => r.json())
+    .then((data) => setCoinList(data));
+  }, []);
+
+  console.log("coinList is:", coinList); // Find a way to fetch ONLY the name and id of each object in data...
+
+  return(
     <div className="App">
+      <CoinListProvider> {/* Wrap anything needing (coinList, setCoinList) context data */}
+      <CoinInvProvider>
+        <NavBar />
+        <Switch>
+          <Route exact path="/coins">
+            <Coins />
+          </Route>
+          <Route exact path="/coins/new">
+            <NewCoin  />
+          </Route>
+          <Route exact path="/">
+            <div>
+              <p>Home Page</p>
+              <Home />
+            </div>
+          </Route>
+        </Switch>
+      </CoinInvProvider>
+      </CoinListProvider>
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>Edit {/*<code>src/NewCoin.js</code>*/} and save to reload.</p>
+            <a className="App-link" href="https://reactjs.org"
+                target="_blank" rel="noopener noreferrer" >
+                  Learn React
+            </a>
       </header>
     </div>
   );
