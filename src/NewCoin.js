@@ -3,15 +3,11 @@ import {CoinListContext} from "./context/coinList";
 import {CoinInvContext} from "./context/coinInv";
 
 // Need to implement:
-// Map the external API in the dropdown to create the options based on the possible coins
+// Map the external API data(id, name) in the dropdown to create the options based on the possible coins
 
-// Create submitForm for creating the newCoin Object
+// function for POST fetch request to send new Object(newCoin) to be added to the Array in the db.json
 
-// Send new Object (newCoin) to be added to the array in the db.json
 
-// Add newCoin Object to the Array of coin Objects
-
-// Any state needed? Yes, brought in from context folder (./context/<file>).
 // What state is needed? ?
 
 // useEffect needed? For saving changes to coinInv
@@ -22,8 +18,11 @@ function NewCoin(){
     useEffect(() => {
         fetch("https://api.coinbase.com/v2/currencies") //default GET request to the API.
         .then((r) => r.json())
-        .then((data) => setCoinList(data));
+        .then((data) => setCoinList(data)); // sets coinList.
       }, [setCoinList]);
+
+
+      useEffect(() => {}, []);
     
       console.log("coinList is:", coinList.data); // coinList is only rendered while NewCoin is rendered.
 

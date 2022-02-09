@@ -7,7 +7,7 @@ import {CoinInvContext} from "./context/coinInv";
 // Need to implement:
 // Map the coin Objects
 
-// 
+// GET fetch request to 
 
 function Coins(){
     const {coinList, setCoinList} = useContext(CoinListContext);

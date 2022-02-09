@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Route, Switch} from "react-router-dom";
 import NavBar from './NavBar';
 import Home from './Home';
@@ -12,7 +12,6 @@ import {CoinInvProvider} from "./context/coinInv";
 // Any state needed? Yes, so state can be passed to each child component needing it (useContext!!!)
 
 function App(){
-  const [coinInv, setCoinInv] = useState([]); //State variables for the Array of current inventory of coins.
   // const {coinList, setCoinList} = useContext(CoinListContext); // State variables for the API's list of coins.
 
   return(

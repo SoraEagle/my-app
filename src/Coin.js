@@ -1,7 +1,9 @@
 // Any state needed? ?
 
 // Need to implement:
-// Create buttons "Edit" and "Delete"
+// Map the external API data(id, name) in the dropdown to create the options based on the possible coins
+
+// Create "Delete" Button
 
 // Create the coin Object
 // Add coin Object to an Array
@@ -9,20 +11,23 @@
 
 function Coin(){
     // const {id, name, amount} = coin; //Should a key be added?
-    // id: id
+    // id: key={id}
     // name: the unit for the currency
     // amount: value of a field in the submitForm...
 
      // Fetch the data from the db.json of the other repo
 
-    // Function to update the coin Object
-
-    // Function to delete the coin Object
+    function deleteCoin(){ // Function to delete the coin Object
+        // DELETE fetch request
+    }
 
     return(
         <div>
             {/* Give the data of the coin from the API here */}
-            {/*  */}
+            {/* coin.amount */}
+            {/* coin.name */}
+            {/* Delete Button */}
+            <button onClick={deleteCoin} >Delete</button>
         </div>
     );
 }
