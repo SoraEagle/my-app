@@ -5,8 +5,8 @@ import {CoinInvContext} from "./context/coinInv";
 // Need to implement:
 // Map the coin Objects
 
-// GET fetch request to 
-// fetch("https://github.com/SoraEagle/json-server-template/blob/phase-2-project-json/db/db.json")
+// GET fetch request to retrieve the coin Objects from db.json
+// fetch("")
 // .then((r) => r.json())
 
 function Coins(){

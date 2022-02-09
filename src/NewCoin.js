@@ -33,21 +33,19 @@ function NewCoin(){
         event.preventDefault();
 
         /*
-        fetch("http://localhost:3001/", { //POST fetch request to post new questions to qList
+        fetch("http://localhost:3001/coins", { // POST fetch request to post newCoin to db.json
       method: "POST",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify({ //Use the formData object's data to create the new question object.
-        prompt: formData.prompt,
-        answers: [formData.answer1, formData.answer2, formData.answer3, formData.answer4], // Creates an Array of the answers.
+      body: JSON.stringify({ // 
+        amount: formData.prompt,
+        currency: [formData.answer1, formData.answer2, formData.answer3, formData.answer4], // 
         correctIndex: formData.correctIndex
       }),
     })
     .then((r) => r.json())
-    .then((newQuestion) => setQList([...qList, newQuestion]));
+    .then((newCoin) => coinInv([...coinInv, newCoin]));
         */ 
     }
-
-    // console.log(coinInv);
 
     return(
     <div>
@@ -60,8 +58,8 @@ function NewCoin(){
                 <select>
                     {/* Map the coinList here, or invoke the function for it here */}
                     {/* const options = .map((coinList) => {
-            <option></option>
-        }) */}
+                            <option key={name}></option>
+                        }) */}
                 </select>
             </label>
             <button type="submit">Submit Currency</button>
