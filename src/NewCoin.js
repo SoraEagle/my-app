@@ -8,8 +8,6 @@ import {CoinInvContext} from "./context/coinInv";
 // function for POST fetch request to send new Object(newCoin) to be added to the Array in the db.json
 
 
-// What state is needed? ?
-
 function NewCoin(){
     const {coinList, setCoinList} = useContext(CoinListContext);
     const {coinInv, setCoinInv} = useContext(CoinInvContext);
@@ -30,8 +28,8 @@ function NewCoin(){
 
       console.log("coinInv: ", coinInv);
 
-    //   POST request function
-    function handleSubmit(event){ //Connected to Submit button
+
+      function handleSubmit(event){ //Connected to Submit button
         event.preventDefault();
 
         /*
