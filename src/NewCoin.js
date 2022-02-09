@@ -17,15 +17,15 @@ function NewCoin(){
         .then((data) => setCoinList(data));
       }, [setCoinList]);
     
-      console.log("coinList is:", coinList); // coinList is only rendered while NewCoin is rendered
+      console.log("coinList is:", coinList.data); // coinList is only rendered while NewCoin is rendered.
 
     return(
     <div>
         <h2>Submit New Coin</h2>
 
         {/* Add the dropdown menu */}
-        {/* const options = .map(() => {
-            <option>{`https://api.coinbase.com/v2/currencies/${data.name}`}</option>
+        {/* const options = .map((coinList) => {
+            <option></option>
         }) */}
     </div>
     );
