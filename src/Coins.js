@@ -2,13 +2,12 @@ import React, {useContext} from "react";
 import Coin from "./Coin";
 import {useRouteMatch} from "react-router-dom";
 import {CoinListContext} from "./context/coinList";
+import {CoinInvContext} from "./context/coinInv";
 
 // Need to implement:
 // Map the coin Objects
 
 // 
-
-// Any state needed? Yes, brought in from context folder (./context/<file>)
 
 function Coins(){
     const {coinList, setCoinList} = useContext(CoinListContext);

@@ -1,9 +1,12 @@
 import React, {useContext, useEffect} from "react";
 import {CoinListContext} from "./context/coinList";
-import {CoinInvContext} from "./context/coinInv"
+import {CoinInvContext} from "./context/coinInv";
 
 // Need to implement:
 // Map the external API in the dropdown to create the options based on the possible coins
+
+// Create submitForm for creating the newCoin Object
+
 // Send new Object (newCoin) to be added to the array in the db.json
 
 // Add newCoin Object to the Array of coin Objects
@@ -27,6 +30,16 @@ function NewCoin(){
     return(
     <div>
         <h2>Submit New Coin</h2>
+
+        <form > {/* form for creating the newCoin Object */}
+            <label>Amount:
+            <input type="text" name="amount"></input></label> {/* Amount of the newCoin */}
+            <label>Currency:
+                <select>
+                    {/* Map the coinList here, or invoke the function for it here */}
+                </select>
+            </label>
+        </form>
 
         {/* Add the dropdown menu */}
         {/* const options = .map((coinList) => {
