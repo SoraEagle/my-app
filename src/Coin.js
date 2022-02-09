@@ -1,5 +1,12 @@
 // Any state needed? ?
 
+// Need to implement:
+// Create buttons "Edit" and "Delete"
+
+// Create the coin Object
+// Add coin Object to an Array
+// Write the Array of coin Objects to db.json
+
 function Coin(){
     // const {id, name, amount} = coin; //Should a key be added?
     // id: id

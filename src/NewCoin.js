@@ -1,12 +1,17 @@
 import React, {useContext, useEffect} from "react";
 import {CoinListContext} from "./context/coinList";
+import {CoinInvContext} from "./context/coinInv"
 
+// Need to implement:
 // Map the external API in the dropdown to create the options based on the possible coins
 // Send new Object (newCoin) to be added to the array in the db.json
 
+// Add newCoin Object to the Array of coin Objects
+
 // Any state needed? Yes, brought in from context folder (./context/<file>).
 // What state is needed? ?
-// Is useEffect needed? Yes
+
+// useEffect needed? For saving changes to coinInv
 
 function NewCoin(){
     const {coinList, setCoinList} = useContext(CoinListContext);
