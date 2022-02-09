@@ -14,6 +14,7 @@ import {CoinInvContext} from "./context/coinInv";
 
 function NewCoin(){
     const {coinList, setCoinList} = useContext(CoinListContext);
+    const {coinInv, setCoinInv} = useContext(CoinInvContext);
 
     useEffect(() => {
         fetch("https://api.coinbase.com/v2/currencies") //default GET request to the API.
@@ -25,6 +26,11 @@ function NewCoin(){
       useEffect(() => {}, []);
     
       console.log("coinList is:", coinList.data); // coinList is only rendered while NewCoin is rendered.
+
+    //   POST request function
+    // 
+
+    console.log(coinInv);
 
     return(
     <div>

@@ -12,12 +12,10 @@ import {CoinInvProvider} from "./context/coinInv";
 // Any state needed? Yes, so state can be passed to each child component needing it (useContext!!!)
 
 function App(){
-  // const {coinList, setCoinList} = useContext(CoinListContext); // State variables for the API's list of coins.
-
   return(
     <div className="App">
       <CoinListProvider> {/* Wrap anything needing (coinList, setCoinList) context data */}
-      <CoinInvProvider>
+      <CoinInvProvider> {/* Wrap anything needing (coinInv, setCoinInv) context data */}
         <NavBar />
         <Switch>
           <Route exact path="/coins">
