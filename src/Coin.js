@@ -15,6 +15,10 @@ function Coin({coin}){
 
     // Fetch the data from db.json
 
+    function updateCoin(){ // Function to update a selected coin Object
+        // 
+    }
+
     function deleteCoin(){ // Function to delete a coin Object
         /* fetch(`<url>/${coin.id}`, { // 
       method: "DELETE",
@@ -30,6 +34,7 @@ function Coin({coin}){
             {/*  */}
             {/* coin.amount */}
             {/* coin.name */}
+            <button onClick={updateCoin} ></button>
             <button onClick={deleteCoin} >Delete</button>
         </div>
     );
