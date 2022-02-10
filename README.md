@@ -16,7 +16,11 @@ Not yet created...
 
 
 ## Installation
-Clone the repo: `https://github.com/SoraEagle/my-app`
+Clone the repos: 
+
+[Frontend Repo](https://github.com/SoraEagle/my-app)
+
+[Backend Repo](https://github.com/SoraEagle/json-server-template/tree/phase-2-project-json)
 
 ### `npm start`
 Runs the app in development mode.
