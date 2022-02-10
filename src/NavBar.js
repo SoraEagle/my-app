@@ -17,6 +17,7 @@ function NavBar(){
     return(
         <div
           style={{
+            backgroundColor: "firebrick",
             borderBottom: "2px solid black",
             paddingBottom: "10px",
             marginBottom: "12px",

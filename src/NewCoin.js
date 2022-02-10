@@ -5,6 +5,7 @@ import {CoinInvContext} from "./context/coinInv";
 // Need to implement:
 // Map the external API data(id, name) in the dropdown to create the options based on the possible coins
 
+// Create the newCoin Object
 // function for POST fetch request to send new Object(newCoin) to be added to coinInv
 
 
