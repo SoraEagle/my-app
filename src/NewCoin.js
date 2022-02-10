@@ -30,32 +30,42 @@ function NewCoin(){
       console.log("coinInv: ", coinInv); //Currently empty
 
 
-      function handleSubmit(event){ //Connected to Submit button
-        event.preventDefault();
+    // Map the coinList here, or invoke the function for it here
+    const currency = coinList.data;
 
-        /*
-        fetch("http://localhost:3001/coins", { // POST fetch request to post newCoin to db.json
-          method: "POST",
-          headers: {"Content-Type": "application/json"},
-          body: JSON.stringify({ // 
-            id: newCoin.id,
-            amount: newCoin.amount,
-            name: newCoin.name
-          }),
-        })
-    .then((r) => r.json())
-    .then((newCoin) => coinInv([...coinInv, newCoin]));
-        */ 
+    console.log(currency);
+
+    // Create the newCoin Object
+    const newCoin = {
+      id: [currency],
+      // amount: coins.amount,
+      name: [coinList.name]
     }
 
-    {/* Map the coinList here, or invoke the function for it here */}
-    // let coins = coinList.data;
-
-    // console.log("Coins: ", coins);
+    console.log("Coins: ", newCoin);
 
     // const options = coins.map((coin) => { 
     //     <option key={coin.id}>{coin}</option>
     // })
+
+    function handleSubmit(event){ //Connected to Submit button
+      event.preventDefault();
+
+      /*
+      fetch("http://localhost:3001/coins", { // POST fetch request to post newCoin to db.json
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ // 
+          id: newCoin.id,
+          amount: newCoin.amount,
+          name: newCoin.name
+        }),
+      })
+  .then((r) => r.json())
+  .then((newCoin) => coinInv([...coinInv, newCoin]));
+      */ 
+  }
+  
 
     return(
     <div>
@@ -63,7 +73,7 @@ function NewCoin(){
 
         <form onSubmit={handleSubmit}> {/* form for creating the newCoin Object */}
             <label>Amount:
-            <input type="text" name="amount"></input></label> {/* Amount of the newCoin */}
+            <input type="text" name="amount" value={newCoin.amount}></input></label> {/* Amount of the newCoin */}
             <label>Currency:
                 <select></select>
             </label>
