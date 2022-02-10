@@ -12,7 +12,6 @@ const linkStyles = {
 };
 
   // 3 routes (Home, Coins, and NewCoin)
-
 function NavBar(){
     return(
         <div

@@ -13,7 +13,10 @@ import {CoinInvProvider} from "./context/coinInv";
 
 function App(){
   return(
-    <div className="App">
+    <div className="App"
+    style={{
+      backgroundColor: "aqua"
+    }}>
       <CoinListProvider> {/* Wrap anything needing (coinList, setCoinList) context data */}
       <CoinInvProvider> {/* Wrap anything needing (coinInv, setCoinInv) context data */}
         <NavBar />
