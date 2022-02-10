@@ -7,9 +7,7 @@
 // Add coin Object to coinInv
 // Write the Array of coin Objects to db.json
 
-function Coin({coin}){
-    const {id, name, amount} = coin; // key={id}
-    console.log("Coin: ", coin);
+function Coin(){
     // name: the unit for the currency
     // amount: value of a field in the submitForm...
 

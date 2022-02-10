@@ -1,15 +1,16 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {CoinListContext} from "./context/coinList";
 import {CoinInvContext} from "./context/coinInv";
 
 // Need to implement:
 // Create the newCoin Object
-// function for POST fetch request to send new Object(newCoin) to be added to coinInv
-
+// function for POST fetch request to send new Object(newCoin) to be added to coinInv(db.json)
 
 function NewCoin(){
     const {coinList, setCoinList} = useContext(CoinListContext);
     const {coinInv, setCoinInv} = useContext(CoinInvContext);
+
+    const [amount, setAmount] = useState(0);
 
     useEffect(() => {
       fetch("https://api.coinbase.com/v2/currencies") //default GET request to the API.
@@ -19,21 +20,18 @@ function NewCoin(){
       // coinList is, here, a Object that has a single key/value pair (data).
       // coinList.data appears to be an Array of Objects
     
-      console.log("coinList is:", coinList); // coinList is only rendered while NewCoin is rendered.
-
       // useEffect(() => { // Used for GET fetch request from db.json
       //   fetch("http://localhost:3001/coins")
       //   .then((r) => r.json())
       //   .then((data) => setCoinInv(data));
       // }, [setCoinInv]);
 
-      // console.log("coinInv: ", coinInv); //Currently empty
+      // console.log("coinInv: ", coinInv); //
 
 
-    // Map coinList here, or invoke the function for it here
     const newCoin = {
       id: coinList.id,
-      amount: document.getElementsByName("amount"),
+      amount: document.getElementsByName("amount").value,
       name: coinList.name
     }
 
@@ -43,18 +41,30 @@ function NewCoin(){
     const options = coins ? coins.map((coin) => { // Using ternary to ensure that coin it 
       // console.log("coin", coin);  // To test if coin is iterable
       return <option key={coin.id}>{coin.name}</option>
-    }) : null;
+    }) : `loading`;
+
+
+    function changeCoin(differentCoin){
+      differentCoin.name = coinList.map((coin) => {
+        if(coin.id === differentCoin.id){
+          return differentCoin.name;
+        }else{
+          return coin.name;
+        }
+      });
+      // setQList(updatedQuestion);
+    }
 
 
     function handleSubmit(event){ //Connected to Submit button
       event.preventDefault();
-
+      console.log("newCoin: ", newCoin);
       fetch("http://localhost:3001/coins", { // POST fetch request to post newCoin to db.json
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ // 
           id: newCoin.id,
-          amount: newCoin.amount,
+          amount: document.getElementsByName("amount").value,
           name: newCoin.name
         }),
       })
@@ -68,10 +78,10 @@ function NewCoin(){
         <h2>Submit New Coin</h2>
         <form onSubmit={handleSubmit}> {/* form for creating the newCoin Object */}
           <label>Amount:
-          <input type="text" name="amount" value={newCoin.amount}></input>
-          </label> {/* Amount of the newCoin */}
+            <input type="text" name="amount" value={amount}></input> {/* Amount of the newCoin */}
+          </label>
             <label>Currency:
-                <select>{options}</select> {/* The dropdown; onChange={function handleChange} */}
+                <select onChange={changeCoin}>{options}</select> {/* The dropdown; onChange={function handleChange} */}
             </label>
             <button type="submit">Submit Currency</button>
         </form>
