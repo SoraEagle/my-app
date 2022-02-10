@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import Coin from "./Coin";
 import {CoinInvContext} from "./context/coinInv";
 
@@ -12,6 +12,17 @@ import {CoinInvContext} from "./context/coinInv";
 function Coins(){
     const {coinInv, setCoinInv} = useContext(CoinInvContext);
     console.log("coinInv: ", coinInv.data);
+
+    useEffect(() => { // Used for GET fetch request from db.json
+        fetch("http://localhost:3001/coins")
+        .then((r) => r.json())
+        .then((data) => setCoinInv(data));
+      }, [setCoinInv]);
+
+      if(coinInv.length === 0) console.log("CoinInv is empty!");
+      else console.log("coinInv: ", coinInv);
+
+      console.log("coinInv: ", coinInv); //Currently empty
 
     // Make sure key={coin.id}
 
