@@ -18,15 +18,15 @@ function NewCoin(){
         .then((data) => setCoinList(data)); // sets coinList.
       }, [setCoinList]);
     
-      console.log("coinList is:", coinList.data); // coinList is only rendered while NewCoin is rendered.
+      console.log("coinList is:", coinList); // coinList is only rendered while NewCoin is rendered.
 
-      useEffect(() => { // Used for GET fetch from db.json
+      useEffect(() => { // Used for GET fetch request from db.json
         fetch("http://localhost:3001/coins")
         .then((r) => r.json())
         .then((data) => setCoinInv(data));
       }, [setCoinInv]);
 
-      console.log("coinInv: ", coinInv);
+      console.log("coinInv: ", coinInv); //Currently empty
 
 
       function handleSubmit(event){ //Connected to Submit button
@@ -47,6 +47,15 @@ function NewCoin(){
         */ 
     }
 
+    {/* Map the coinList here, or invoke the function for it here */}
+    // let coins = coinList.data;
+
+    // console.log("Coins: ", coins);
+
+    // const options = coins.map((coin) => { 
+    //     <option key={coin.id}>{coin}</option>
+    // })
+
     return(
     <div>
         <h2>Submit New Coin</h2>
@@ -55,12 +64,7 @@ function NewCoin(){
             <label>Amount:
             <input type="text" name="amount"></input></label> {/* Amount of the newCoin */}
             <label>Currency:
-                <select>
-                    {/* Map the coinList here, or invoke the function for it here */}
-                    {/* const options = .map((coinList) => {
-                            <option key={name}></option>
-                        }) */}
-                </select>
+                <select></select>
             </label>
             <button type="submit">Submit Currency</button>
         </form>

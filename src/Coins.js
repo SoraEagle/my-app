@@ -20,9 +20,9 @@ function Coins(){
             <h2>My Coins:</h2>
             
             {/* Create a function to map <Coin /> */}
-            {/* {coinInv.map(() => {
+            {coinInv.map((coin) => {
                 <Coin />
-            })} */}
+            })}
         </div>
         );
 }

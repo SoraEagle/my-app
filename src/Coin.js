@@ -9,7 +9,7 @@
 
 function Coin({coin}){
     const {id, name, amount} = coin; // key={id}
-    console.log(coin);
+    console.log("Coin: ", coin);
     // name: the unit for the currency
     // amount: value of a field in the submitForm...
 
