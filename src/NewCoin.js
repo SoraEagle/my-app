@@ -18,6 +18,8 @@ function NewCoin(){
         .then((r) => r.json())
         .then((data) => setCoinList(data)); // sets coinList.
       }, [setCoinList]);
+      // coinList is, here, a Object that has a single key/value pair (data).
+      // coinList.data appears to be an Array of Objects
     
       console.log("coinList is:", coinList); // coinList is only rendered while NewCoin is rendered.
 
