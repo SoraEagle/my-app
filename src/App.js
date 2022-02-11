@@ -40,9 +40,13 @@ function App(){
       <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <p>Edit {/*<code>src/NewCoin.js</code>*/} and save to reload.</p>
-            <a className="App-link" href="https://reactjs.org"
+            <a className="reactJS-link" href="https://reactjs.org"
                 target="_blank" rel="noopener noreferrer" >
-                  Learn React
+                  This application was created with React
+            </a>
+            <a className="reactRouter-link" href="https://reactrouter.com/"
+            target="_blank" rel="noopener noreferrer">
+              And React Router
             </a>
       </header>
     </div>

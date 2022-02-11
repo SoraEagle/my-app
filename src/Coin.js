@@ -11,10 +11,6 @@ function Coin({coin}){
 
     console.log(`Coin # ${coinInv.indexOf(coin) + 1}`, coin);
 
-    function updateCoin(){ // Function to update a selected coin Object
-        // 
-    }
-
     function deleteCoin(){ // Function to delete a coin Object
     fetch(`http://localhost:3001/coins/${coin.id}`, { // DELETE fetch request
       method: "DELETE",
@@ -35,7 +31,7 @@ function Coin({coin}){
             marginBottom: "12px",
           }} >
             {/* Give the data of the coin from coinInv here */}
-            {coin.amount} {coin.currency} 
+            #{coinInv.indexOf(coin) + 1} {coin.amount} {coin.currency} 
             {/* <button onClick={updateCoin} >Edit</button> */}
             <button onClick={deleteCoin} >Delete</button>
         </div>
