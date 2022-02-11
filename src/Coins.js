@@ -11,7 +11,6 @@ import {CoinInvContext} from "./context/coinInv";
 
 function Coins(){
     const {coinInv, setCoinInv} = useContext(CoinInvContext);
-    console.log("coinInv: ", coinInv.data);
 
     useEffect(() => { // Used for GET fetch request from db.json
         fetch("http://localhost:3001/coins")
@@ -22,23 +21,18 @@ function Coins(){
       if(coinInv.length === 0) console.log("CoinInv is empty!");
       else console.log("coinInv: ", coinInv);
 
-    // Make sure key={coin.id}
-
     return(
         <div>
             <h2 style={{
             borderBottom: "2px solid black",
             marginBottom: "12px",
             marginTop: "12px"
-          }}>
+            }}>
               My Coins:
-          </h2>
-            
-            <ul>
-                {coinInv.map((coin) => {
-                    return <h5 key={coin.id}><Coin coin={coin} /></h5>
-                })}
-            </ul>
+            </h2>
+            {coinInv.map((coin) => {
+                return <h5 key={coin.id}><Coin coin={coin} /></h5>
+            })}
         </div>
         );
 }

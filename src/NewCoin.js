@@ -18,7 +18,6 @@ function NewCoin(){
     // coinList is, here, a Object that has a single key/value pair (data).
     // coinList.data appears to be an Array of Objects
 
-
   const newCoin = { // Definition of the newCoin Object
     id: coinList.id,
     amount: amount,
@@ -26,11 +25,11 @@ function NewCoin(){
   }
   console.log("newCoin: ", newCoin)
 
-  function handleAmountChange(e){
+  function handleAmountChange(e){ // Function to track changes to the amount typed in
     setAmount(e.target.value);
   }
 
-  function handleCurrencyChange(e){
+  function handleCurrencyChange(e){ //Function to keep track of the currency being submitted.
     setCurrency(e.target.value);
   }
 
