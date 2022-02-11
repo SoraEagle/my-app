@@ -19,7 +19,8 @@ function Coin({coin}){
 
     function onDeleteCoin(deletedCoin){ //Function 
         const updatedCoins = coinInv.filter((coin) => coin.id !== deletedCoin.id);
-    setCoinInv(updatedCoins);
+        debugger;
+        setCoinInv(updatedCoins);
     }
 
     return(
