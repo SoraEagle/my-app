@@ -11,6 +11,8 @@ function NewCoin(){
     const {coinInv, setCoinInv} = useContext(CoinInvContext);
 
     const [amount, setAmount] = useState(0);
+    const [currency, setCurrency] = useState("");
+
 
     useEffect(() => {
       fetch("https://api.coinbase.com/v2/currencies") //default GET request to the API.
@@ -29,31 +31,32 @@ function NewCoin(){
       // console.log("coinInv: ", coinInv); //
 
 
-    const newCoin = {
+    const newCoin = { // Definition of the newCoin Object
       id: coinList.id,
-      amount: document.getElementsByName("amount").value,
-      name: coinList.name
+      amount: amount,
+      name: currency
     }
+
+    console.log("newCoin: ", newCoin)
+
+    function handleAmountChange(event){
+      setAmount(event.target.value);
+      console.log("amount: ", amount); // Test if it is being tracked
+    }
+
+  function handleCurrencyChange(event){
+    setCurrency(event.target.value);
+    console.log("currency: ", currency); // Test if it is being tracked
+  }
+
 
     let coins = coinList.data;
     console.log("Coins: ", coins);
 
-    const options = coins ? coins.map((coin) => { // Using ternary to ensure that coin it 
+    const options = coins ? coins.map((coin) => { // Using ternary to ensure that coin is mapped
       // console.log("coin", coin);  // To test if coin is iterable
       return <option key={coin.id}>{coin.name}</option>
     }) : `loading`;
-
-
-    function changeCoin(differentCoin){
-      differentCoin.name = coinList.map((coin) => {
-        if(coin.id === differentCoin.id){
-          return differentCoin.name;
-        }else{
-          return coin.name;
-        }
-      });
-      // setQList(updatedQuestion);
-    }
 
 
     function handleSubmit(event){ //Connected to Submit button
@@ -64,13 +67,13 @@ function NewCoin(){
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({ // 
           id: newCoin.id,
-          amount: document.getElementsByName("amount").value,
-          name: newCoin.name
+          amount: amount,
+          name: currency
         }),
       })
-  .then((r) => r.json())
-  .then((newCoin) => setCoinInv([...coinInv, newCoin])); // "coinInv is not a function"
-  }
+      .then((r) => r.json())
+      .then((newCoin) => setCoinInv([...coinInv, newCoin])); // "coinInv is not a function"
+    }
 
 
     return(
@@ -78,10 +81,11 @@ function NewCoin(){
         <h2>Submit New Coin</h2>
         <form onSubmit={handleSubmit}> {/* form for creating the newCoin Object */}
           <label>Amount:
-            <input type="text" name="amount" value={amount}></input> {/* Amount of the newCoin */}
+            <input type="text" name="amount" 
+              value={amount} onChange={handleAmountChange} /> {/* Amount of the newCoin */}
           </label>
             <label>Currency:
-                <select onChange={changeCoin}>{options}</select> {/* The dropdown; onChange={function handleChange} */}
+                <select value={currency} onChange={handleCurrencyChange}>{options}</select> {/* The dropdown; onChange={function handleChange} */}
             </label>
             <button type="submit">Submit Currency</button>
         </form>
