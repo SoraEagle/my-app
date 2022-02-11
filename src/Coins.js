@@ -32,7 +32,7 @@ function Coins(){
             
             {/* Create a function to map <Coin /> */}
             {coinInv.map((coin) => {
-                return <Coin />
+                return <Coin coin={coin} />
             })}
         </div>
         );

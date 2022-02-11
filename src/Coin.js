@@ -1,17 +1,11 @@
 // Need to implement:
-// Map the external API data(id, name) in the dropdown to create the options based on the possible coins
-
 // Create "Edit" and "Delete" Buttons with functions
 
 // Create the coin Object
-// Add coin Object to coinInv
 // Write the Array of coin Objects to db.json
 
-function Coin(){
-    // name: the unit for the currency
-    // amount: value of a field in the submitForm...
-
-    // Fetch the data from db.json
+function Coin({coin}){
+    console.log(coin);
 
     function updateCoin(){ // Function to update a selected coin Object
         // 
@@ -27,12 +21,16 @@ function Coin(){
     }
 
     return(
-        <div>
+        <div style={{
+            borderBottom: "2px solid black",
+            paddingBottom: "10px",
+            marginBottom: "12px",
+          }} >
             {/* Give the data of the coin from coinInv here */}
-            {/*  */}
-            {/* coin.amount */}
-            {/* coin.name */}
-            <button onClick={updateCoin} ></button>
+            {/* Map out coinInv? */}
+            <h5>{coin.amount}</h5>
+            <h5>{coin.currency}</h5>
+            <button onClick={updateCoin} >Edit</button>
             <button onClick={deleteCoin} >Delete</button>
         </div>
     );

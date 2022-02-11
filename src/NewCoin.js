@@ -68,7 +68,7 @@ function NewCoin(){
         body: JSON.stringify({ // 
           id: newCoin.id,
           amount: amount,
-          name: currency
+          currency: currency
         }),
       })
       .then((r) => r.json())
