@@ -25,7 +25,6 @@ function NewCoin(){
       amount: amount,
       name: currency
     }
-
     console.log("newCoin: ", newCoin)
 
     function handleAmountChange(event){
@@ -64,10 +63,12 @@ function NewCoin(){
       .then((newCoin) => setCoinInv([...coinInv, newCoin])); // "coinInv is not a function"
     }
 
-
     return(
     <div>
-        <h2>Submit New Coin</h2>
+        <h2 style={{
+            borderBottom: "2px solid black",
+            marginBottom: "12px",
+          }}>Submit New Coin</h2>
         <form onSubmit={handleSubmit}> {/* form for creating the newCoin Object */}
           <label>Amount:
             <input type="text" name="amount" 

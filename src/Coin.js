@@ -9,7 +9,7 @@ import {CoinInvContext} from "./context/coinInv";
 function Coin({coin}){
     const {coinInv, setCoinInv} = useContext(CoinInvContext);
 
-    console.log(coin);
+    console.log(`Coin # ${coinInv.indexOf(coin) + 1}`, coin);
 
     function updateCoin(){ // Function to update a selected coin Object
         // 
@@ -35,9 +35,8 @@ function Coin({coin}){
             marginBottom: "12px",
           }} >
             {/* Give the data of the coin from coinInv here */}
-            {/* Map out coinInv? */}
             {coin.amount} {coin.currency} 
-            <button onClick={updateCoin} >Edit</button>
+            {/* <button onClick={updateCoin} >Edit</button> */}
             <button onClick={deleteCoin} >Delete</button>
         </div>
     );
