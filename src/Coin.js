@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {CoinInvContext} from "./context/coinInv";
 
 // Need to implement:
-// Create "Edit" and "Delete" Buttons with functions
+// Create "Edit" Button with function(s)
 
 // Write the Array of coin Objects to db.json
 

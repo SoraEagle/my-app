@@ -3,12 +3,10 @@ import {CoinListContext} from "./context/coinList";
 import {CoinInvContext} from "./context/coinInv";
 
 // Need to implement:
-// function for POST fetch request to send new Object(newCoin) to be added to coinInv(db.json)
 
 function NewCoin(){
     const {coinList, setCoinList} = useContext(CoinListContext);
     const {coinInv, setCoinInv} = useContext(CoinInvContext);
-
     const [amount, setAmount] = useState(0);
     const [currency, setCurrency] = useState("");
 
@@ -50,7 +48,7 @@ function NewCoin(){
 
 
     let coins = coinList.data;
-    console.log("Coins: ", coins);
+    // console.log("Coins: ", coins);
 
     const options = coins ? coins.map((coin) => { // Using ternary to ensure that coin is mapped
       // console.log("coin", coin);  // To test if coin is iterable
