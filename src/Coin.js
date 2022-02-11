@@ -1,7 +1,6 @@
 // Need to implement:
 // Create "Edit" and "Delete" Buttons with functions
 
-// Create the coin Object
 // Write the Array of coin Objects to db.json
 
 function Coin({coin}){
@@ -21,15 +20,14 @@ function Coin({coin}){
     }
 
     return(
-        <div style={{
+        <div key={coin.id} style={{
             borderBottom: "2px solid black",
             paddingBottom: "10px",
             marginBottom: "12px",
           }} >
             {/* Give the data of the coin from coinInv here */}
             {/* Map out coinInv? */}
-            <h5>{coin.amount}</h5>
-            <h5>{coin.currency}</h5>
+            {coin.amount} {coin.currency} 
             <button onClick={updateCoin} >Edit</button>
             <button onClick={deleteCoin} >Delete</button>
         </div>

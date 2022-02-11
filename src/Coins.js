@@ -22,18 +22,23 @@ function Coins(){
       if(coinInv.length === 0) console.log("CoinInv is empty!");
       else console.log("coinInv: ", coinInv);
 
-      console.log("coinInv: ", coinInv); //Currently empty
-
     // Make sure key={coin.id}
 
     return(
         <div>
-            <h2>My Coins:</h2>
+            <h2 style={{
+            borderBottom: "2px solid black",
+            marginBottom: "12px",
+            marginTop: "12px"
+          }}>
+              My Coins:
+          </h2>
             
-            {/* Create a function to map <Coin /> */}
-            {coinInv.map((coin) => {
-                return <Coin coin={coin} />
-            })}
+            <ul>
+                {coinInv.map((coin) => {
+                    return <h5 key={coin.id}><Coin coin={coin} /></h5>
+                })}
+            </ul>
         </div>
         );
 }

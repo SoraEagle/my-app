@@ -3,7 +3,6 @@ import {CoinListContext} from "./context/coinList";
 import {CoinInvContext} from "./context/coinInv";
 
 // Need to implement:
-// Create the newCoin Object
 // function for POST fetch request to send new Object(newCoin) to be added to coinInv(db.json)
 
 function NewCoin(){
