@@ -18,14 +18,6 @@ function NewCoin(){
     }, [setCoinList]);
       // coinList is, here, a Object that has a single key/value pair (data).
       // coinList.data appears to be an Array of Objects
-    
-      // useEffect(() => { // Used for GET fetch request from db.json
-      //   fetch("http://localhost:3001/coins")
-      //   .then((r) => r.json())
-      //   .then((data) => setCoinInv(data));
-      // }, [setCoinInv]);
-
-      // console.log("coinInv: ", coinInv); //
 
 
     const newCoin = { // Definition of the newCoin Object
