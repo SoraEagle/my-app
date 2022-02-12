@@ -2,8 +2,6 @@ import React, {useContext, useState} from "react";
 import {CoinListContext} from "./context/coinList";
 import {CoinInvContext} from "./context/coinInv";
 
-// Need to implement:
-
 function NewCoin(){
   const {coinList} = useContext(CoinListContext);
   const {coinInv, setCoinInv} = useContext(CoinInvContext);

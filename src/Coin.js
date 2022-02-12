@@ -1,11 +1,6 @@
 import React, {useContext} from "react";
 import {CoinInvContext} from "./context/coinInv";
 
-// Need to implement:
-// Create "Edit" Button with function(s)
-
-// Write the Array of coin Objects to db.json
-
 function Coin({coin}){
     const {coinInv, setCoinInv} = useContext(CoinInvContext);
 
@@ -19,7 +14,6 @@ function Coin({coin}){
 
     function onDeleteCoin(deletedCoin){ //Function 
         const updatedCoins = coinInv.filter((coin) => coin.id !== deletedCoin.id);
-        debugger;
         setCoinInv(updatedCoins);
     }
 
@@ -29,9 +23,7 @@ function Coin({coin}){
             paddingBottom: "10px",
             marginBottom: "12px",
           }} >
-            {/* Give the data of the coin from coinInv here */}
             #{coinInv.indexOf(coin) + 1}: {coin.amount} {coin.currency} 
-            {/* <button onClick={updateCoin} >Edit</button> */}
             <button onClick={deleteCoin} >Delete</button>
         </div>
     );
