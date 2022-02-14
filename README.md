@@ -12,7 +12,7 @@ A <b>db.json</b> to save the inventory to.
 
 
 ## Visuals
-Not yet created...
+https://youtu.be/E4xHZ6Dl1Lg
 
 
 ## Installation
@@ -26,6 +26,10 @@ Clone the repos:
 Runs the app in development mode.
 
 Opens http://localhost:3000 to view it (and any changes made) in the browser.
+
+use the "json-server --watch db.json --port 3001" for the application to read from the backend repository.
+
+The application will now be fully functional.
 
 
 ## Roadmap
