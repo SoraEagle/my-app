@@ -9,8 +9,6 @@ import NewCoin from './NewCoin';
 import {CoinListProvider} from "./context/coinList";
 import {CoinInvProvider} from "./context/coinInv";
 
-// Any state needed? Yes, so state can be passed to each child component needing it (useContext!!!)
-
 function App(){
   return(
     <div className="App"

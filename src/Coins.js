@@ -2,19 +2,8 @@ import React, {useContext} from "react";
 import Coin from "./Coin";
 import {CoinInvContext} from "./context/coinInv";
 
-// Need to implement:
-// Map the coin Objects
-
-// GET fetch request to retrieve the coin Objects from db.json
-
 function Coins(){
     const {coinInv} = useContext(CoinInvContext);
-
-    // useEffect(() => { // Used for GET fetch request from db.json
-    //     fetch("http://localhost:3001/coins")
-    //     .then((r) => r.json())
-    //     .then((data) => setCoinInv(data));
-    //   }, [setCoinInv]);
 
       if(coinInv.length === 0) console.log("CoinInv is empty!");
       else console.log("coinInv: ", coinInv);

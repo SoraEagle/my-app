@@ -5,7 +5,7 @@ const CoinInvContext = React.createContext();
 function CoinInvProvider({children}){
     const [coinInv, setCoinInv] = useState([]); // State variables for setting the application's inventory of coins.
     useEffect(() => { // Used for GET fetch request from db.json
-      fetch("http://localhost:3001/coins")
+      fetch("http://localhost:3001/coins") // Default GET fetch request to the db.json
       .then((r) => r.json())
       .then((data) => setCoinInv(data));
     }, []);
