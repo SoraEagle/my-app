@@ -8,29 +8,29 @@ function NewCoin(){
   const [amount, setAmount] = useState(0);
   const [currency, setCurrency] = useState("");
 
-  const newCoin = { // Definition of the newCoin Object
+  const newCoin = { // Definition of the newCoin Object.
     id: coinList.id,
     amount: amount,
     name: currency
   }
   console.log("newCoin: ", newCoin);
 
-  function handleAmountChange(e){ // Function to track changes to the amount typed in
+  function handleAmountChange(e){ // Function to track changes to the amount typed in.
     setAmount(e.target.value);
   }
-  function handleCurrencyChange(e){ //Function to keep track of the currency being submitted.
+  function handleCurrencyChange(e){ // Function to keep track of the currency being submitted.
     setCurrency(e.target.value);
   }
 
   let coins = coinList.data;
-  const options = coins ? coins.map((coin) => { // Using ternary to ensure that coin is mapped
+  const options = coins ? coins.map((coin) => { // Using ternary to ensure that coin is mapped.
     return <option key={coin.id}>{coin.name}</option>
   }) : `loading`;
 
-  function handleSubmit(e){ //Connected to Submit button
+  function handleSubmit(e){ //Connected to the Submit button.
     e.preventDefault();
     console.log("newCoin: ", newCoin);
-    fetch("http://localhost:3001/coins", { // POST fetch request to post newCoin to db.json
+    fetch("http://localhost:3001/coins", { // POST fetch request to post newCoin to db.json.
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({ // 
@@ -40,7 +40,7 @@ function NewCoin(){
       }),
     })
     .then((r) => r.json())
-    .then((newCoin) => setCoinInv([...coinInv, newCoin])); // "coinInv is not a function"
+    .then((newCoin) => setCoinInv([...coinInv, newCoin])); // Adds the newCoin Object to the coinInv Array.
   }
 
   return(
@@ -60,7 +60,7 @@ function NewCoin(){
           <label>Currency:
               <select value={currency} onChange={handleCurrencyChange}>{options}</select> {/* The dropdown; onChange={function handleChange} */}
           </label>
-          <button type="submit">Submit Currency</button>
+          <button type="submit">Submit Currency</button> {/* The form's button */}
       </form>
     </div>
   );
