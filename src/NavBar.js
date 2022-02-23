@@ -20,9 +20,9 @@ function NavBar(){
             borderBottom: "2px solid black",
             paddingBottom: "10px",
             marginBottom: "12px",
-            height: "10vh" //Keeps the height of this component to 10% of the browser window's height.
+            height: "10vh" //Keeps the height of this component to 10% (10vh) of the browser window's height, but doesn't change button sizes.
           }} >
-          <NavLink style={{linkStyles}} to="/" exact>
+          <NavLink style={linkStyles} to="/" exact>
             Home
           </NavLink>
           <NavLink style={linkStyles} to="/coins">
