@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import {Route, Switch} from "react-router-dom";
@@ -13,12 +13,15 @@ function App(){
   return(
     <div className="App"
     style={{
-      backgroundColor: "aqua"
+      backgroundColor: "aqua",
+      height: "100vh"
     }}>
       <CoinListProvider> {/* Wrap anything needing (coinList, setCoinList) context data */}
       <CoinInvProvider> {/* Wrap anything needing (coinInv, setCoinInv) context data */}
         <NavBar />
-        <Switch>
+        <Switch style={{
+          backgroundColor: "aqua"
+        }}>
           <Route exact path="/coins">
             <Coins />
           </Route>
@@ -35,9 +38,8 @@ function App(){
       </CoinInvProvider>
       </CoinListProvider>
 
-      <header className="App-header">
+      {/* <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <p>Edit {/*<code>src/NewCoin.js</code>*/} and save to reload.</p>
             <a className="reactJS-link" href="https://reactjs.org"
                 target="_blank" rel="noopener noreferrer" >
                   This application was created with React
@@ -46,7 +48,16 @@ function App(){
             target="_blank" rel="noopener noreferrer">
               And React Router
             </a>
-      </header>
+      </header> */}
+      <div style={{
+        backgroundColor: "aqua"
+      }}>
+        <footer>
+          <p>
+            All rights reserved
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }

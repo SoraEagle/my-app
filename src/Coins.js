@@ -9,11 +9,13 @@ function Coins(){
       else console.log("coinInv: ", coinInv);
 
     return(
-        <div>
+        <div style={{
+          // height: "90vh"
+        }}>
             <h2 style={{
             borderBottom: "2px solid black",
             marginBottom: "12px",
-            marginTop: "12px"
+            marginTop: "12px",
             }}>
               My Coins:
             </h2>
