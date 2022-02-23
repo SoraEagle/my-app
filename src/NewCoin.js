@@ -45,14 +45,17 @@ function NewCoin(){
 
   return(
     <div style={{
-      marginBottom: "12px",
+      marginBottom: "10px",
       height: "80vh"
     }}>
       <h2 style={{
           borderBottom: "2px solid black",
           marginBottom: "12px",
         }}>Submit New Coin</h2>
-      <form onSubmit={handleSubmit}> {/* form for creating the newCoin Object */}
+      <form onSubmit={handleSubmit} style={{
+        paddingBottom: "12px",
+        borderBottom: "2px solid black"
+      }}> {/* form for creating the newCoin Object */}
         <label>Amount:
           <input type="text" name="amount" 
             value={amount} onChange={handleAmountChange} /> {/* Amount of the newCoin */}
@@ -62,6 +65,20 @@ function NewCoin(){
           </label>
           <button type="submit">Submit Currency</button> {/* The form's button */}
       </form>
+      <p>You can add new currencies to your inventory here!</p>
+      <div style={{textAlign: "left"}}>
+        <h3>WARNING:</h3>
+        <p style={{borderBottom: "2px solid black"}}>
+          Currently, the only way to submit inventory of the "United Arab Emirates Dirham", you must first select another currency, then reselect "United Arab Emirates Dirham"
+        </p>
+        <h3>INSTRUCTIONS:</h3>
+        <p>To submit a currency to your inventory list correctly, you need to:</p>
+        <ol>
+          <li></li>
+          <li></li>
+          <li>Hit the Submit Button</li>
+        </ol>
+      </div>
     </div>
   );
 }

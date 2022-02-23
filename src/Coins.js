@@ -5,7 +5,11 @@ import {CoinInvContext} from "./context/coinInv";
 function Coins(){
     const {coinInv} = useContext(CoinInvContext);
 
-      if(coinInv.length === 0) console.log("CoinInv is empty!");
+      if(coinInv.length === 0) return(
+      <div>
+        <p>You have no currencies listed!</p>
+        <img src="https://miro.medium.com/max/1280/1*-Nr0OP_Nu7b2NPrcgJ1SuA.png" alt="null"/>
+      </div>);
       else console.log("coinInv: ", coinInv);
 
     return(

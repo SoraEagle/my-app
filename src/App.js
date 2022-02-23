@@ -56,7 +56,6 @@ function App(){
           marginBottom: "12px",
           marginTop: "12px",
           borderTop: "2px solid black",
-          marginTop: "10px",
           paddingTop: "10px",
           textAlign: "center"
         }}>
