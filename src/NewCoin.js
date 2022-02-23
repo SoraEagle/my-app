@@ -66,18 +66,29 @@ function NewCoin(){
           <button type="submit">Submit Currency</button> {/* The form's button */}
       </form>
       <p>You can add new currencies to your inventory here!</p>
-      <div style={{textAlign: "left"}}>
-        <h3>WARNING:</h3>
-        <p style={{borderBottom: "2px solid black"}}>
-          Currently, the only way to submit inventory of the "United Arab Emirates Dirham", you must first select another currency, then reselect "United Arab Emirates Dirham"
-        </p>
+      <div style={{
+        textAlign: "left",
+        borderTop: "2px solid black",
+        borderBottom: "2px solid black"}}>
+          <div style={{
+            backgroundColor: "crimson"
+          }}>
+            <h3>WARNING:</h3>
+            <p style={{borderBottom: "2px solid black"}}>
+              Currently, the page loads with "United Arab Emirates Dirham" seemingly already selected (<i>it is not</i>).<p></p>
+              Submitting to the database without changing this will result in the submitted currency not registering the type of currency.<p></p>
+              <h3>SOLUTION:</h3>
+              To fix this, you must first select another currency, then reselect "United Arab Emirates Dirham" (if that is the currency that you wish to submit).
+            </p>
+          </div>
         <h3>INSTRUCTIONS:</h3>
         <p>To submit a currency to your inventory list correctly, you need to:</p>
         <ol>
-          <li></li>
-          <li></li>
-          <li>Hit the Submit Button</li>
+          <li>Type in the amount of the currency into Amount.</li>
+          <li>Set the Currency dropdown list to your preferred currency.</li>
+          <li>Hit the Submit Button.</li>
         </ol>
+        <p>And your currency will have been submitted to the list.  You will now find it listed on the <a href="/coins">My Coins</a> page. </p>
       </div>
     </div>
   );
