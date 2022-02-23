@@ -51,7 +51,7 @@ function NewCoin(){
       <h2 style={{
           borderBottom: "2px solid black",
           marginBottom: "12px",
-        }}>Submit New Coin</h2>
+        }}>Submit New Currency</h2>
       <form onSubmit={handleSubmit} style={{
         paddingBottom: "12px",
         borderBottom: "2px solid black"
