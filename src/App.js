@@ -14,7 +14,8 @@ function App(){
     <div className="App"
     style={{
       backgroundColor: "aqua",
-      height: "100vh"
+      height: "100vh",
+      textAlign: "center"
     }}>
       <CoinListProvider> {/* Wrap anything needing (coinList, setCoinList) context data */}
       <CoinInvProvider> {/* Wrap anything needing (coinInv, setCoinInv) context data */}
@@ -48,16 +49,9 @@ function App(){
               And React Router
             </a>
       </header> */}
-      <div style={{
-        backgroundColor: "coral",
-        borderBottom: "2px solid black",
-        marginBottom: "12px",
-        marginTop: "12px",
-        borderTop: "2px solid black",
-        marginTop: "10px",
-        paddingTop: "10px"
-      }}>
+      
         <footer style={{
+          backgroundColor: "coral",
           borderBottom: "2px solid black",
           marginBottom: "12px",
           marginTop: "12px",
@@ -69,7 +63,6 @@ function App(){
           <p>@2022 &notin;&empty;&ni; Developments Inc.</p>
           <p>All rights reserved.</p>
         </footer>
-      </div>
     </div>
   );
 }

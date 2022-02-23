@@ -45,7 +45,6 @@ function NewCoin(){
 
   return(
     <div style={{
-      borderBottom: "2px solid black",
       marginBottom: "12px",
       height: "80vh"
     }}>
