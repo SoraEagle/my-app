@@ -20,7 +20,6 @@ function App(){
       <CoinInvProvider> {/* Wrap anything needing (coinInv, setCoinInv) context data */}
         <NavBar />
         <Switch style={{
-          backgroundColor: "aqua"
         }}>
           <Route exact path="/coins">
             <Coins />
@@ -50,12 +49,25 @@ function App(){
             </a>
       </header> */}
       <div style={{
-        backgroundColor: "aqua"
+        backgroundColor: "coral",
+        borderBottom: "2px solid black",
+        marginBottom: "12px",
+        marginTop: "12px",
+        borderTop: "2px solid black",
+        marginTop: "10px",
+        paddingTop: "10px"
       }}>
-        <footer>
-          <p>
-            All rights reserved
-          </p>
+        <footer style={{
+          borderBottom: "2px solid black",
+          marginBottom: "12px",
+          marginTop: "12px",
+          borderTop: "2px solid black",
+          marginTop: "10px",
+          paddingTop: "10px",
+          textAlign: "center"
+        }}>
+          <p>@2022 &notin;&empty;&ni; Developments Inc.</p>
+          <p>All rights reserved.</p>
         </footer>
       </div>
     </div>
