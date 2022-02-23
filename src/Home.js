@@ -3,7 +3,7 @@ function Home(){
         <div style = {{
             marginBottom: "12px",
             paddingLeft: "100px",
-            height: "90vh"
+            height: "80vh"
         }}>
             <p>Welcome to my application!</p>
             <p>WARNING:</p>
