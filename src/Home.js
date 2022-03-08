@@ -6,11 +6,19 @@ function Home(){
             height: "80vh"
         }}>
             <p>Welcome to my application!</p>
-            <p>WARNING:</p>
-            <article align="left">
-                This application is currently incomplete.  It is either still in development (a rough draft of the final version), or this project has been abandoned.
+            <p><b><i>WARNING:</i></b></p>
+            <div style={{
+                textAlign: "left"
+            }}>
+                <article align="left">
+                    This application is currently <b>incomplete</b>.  It is either still in development (a rough draft of the final version), or this project has been abandoned.
                 </article>
-                <img 
+                <article>
+                    <p>As such, there <i>will</i> be bugs and bad grammar on one or all of the pages of this website.  We are currently working on these issues.</p>
+                    <p>Thank you for your understanding, and we hope that you enjoy!</p>
+                </article>
+            </div>
+            <img 
                 src="https://www.scottcountyiowa.gov/sites/default/files/images/news/constructiondude.png" 
                 alt="Under_Construction"/>
         </div>

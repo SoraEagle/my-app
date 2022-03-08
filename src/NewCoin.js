@@ -54,16 +54,15 @@ function NewCoin(){
         }}>Submit New Currency</h2>
       <form onSubmit={handleSubmit} style={{
         paddingBottom: "12px",
-        borderBottom: "2px solid black"
-      }}> {/* form for creating the newCoin Object */}
+        borderBottom: "2px solid black"}}> {/* form for creating newCoin Object */}
         <label>Amount:
           <input type="text" name="amount" 
             value={amount} onChange={handleAmountChange} /> {/* Amount of the newCoin */}
         </label>
-          <label>Currency:
-              <select value={currency} onChange={handleCurrencyChange}>{options}</select> {/* The dropdown; onChange={function handleChange} */}
-          </label>
-          <button type="submit">Submit Currency</button> {/* The form's button */}
+        <label>Currency:
+            <select value={currency} onChange={handleCurrencyChange}>{options}</select> {/* The dropdown; onChange={function handleChange} */}
+        </label>
+        <button type="submit">Submit Currency</button> {/* The form's button */}
       </form>
       <p>You can add new currencies to your inventory here!</p>
       <div style={{
